@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react'
+import { pageImages } from '../data/images'
 import { signupSchema } from '../schemas/signupSchema'
 
 export function Hero() {
@@ -23,9 +24,15 @@ export function Hero() {
   }
 
   return (
-    <section className="relative bg-[var(--color-bg-hero)] pb-28 pt-16 sm:pb-36 sm:pt-20">
+    <section className="relative overflow-hidden bg-[var(--color-bg-hero)] pb-28 pt-16 sm:pb-36 sm:pt-20">
+      <img
+        src={pageImages.hero}
+        alt=""
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20"
+        aria-hidden="true"
+      />
       <div
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           background:
             'radial-gradient(ellipse 80% 60% at 50% 0%, var(--color-primary) 0%, transparent 70%)',

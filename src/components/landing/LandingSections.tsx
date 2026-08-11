@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { features } from '../../data/siteData'
+import { categoryImages, pageImages } from '../../data/images'
 
 const iconPaths = {
   shield: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
@@ -72,7 +73,7 @@ export function ExchangePreview() {
   return (
     <section id="exchange-preview" className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <h2 className="text-2xl font-bold text-[var(--color-text-heading)] sm:text-3xl">
               Trade on Our Exchange
@@ -80,29 +81,36 @@ export function ExchangePreview() {
             <p className="mt-2 max-w-lg text-[var(--color-text-secondary)]">
               Access deep liquidity, real-time prices, and instant execution across 150+ crypto pairs.
             </p>
-          </div>
-          <Link
-            to="/exchange"
-            className="shrink-0 rounded-lg bg-[var(--color-primary)] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
-          >
-            Go to Exchange
-          </Link>
-        </div>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {[
-            { label: 'Spot Trading', desc: 'Buy and sell at market or limit prices' },
-            { label: 'Real-Time Data', desc: 'Live order books, bids, and asks' },
-            { label: 'Low Fees', desc: 'Starting at 0.1% per trade' },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5"
+            <Link
+              to="/exchange"
+              className="mt-6 inline-block rounded-lg bg-[var(--color-primary)] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
             >
-              <h3 className="font-semibold text-[var(--color-text-heading)]">{item.label}</h3>
-              <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{item.desc}</p>
+              Go to Exchange
+            </Link>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-1">
+              {[
+                { label: 'Spot Trading', desc: 'Buy and sell at market or limit prices' },
+                { label: 'Real-Time Data', desc: 'Live order books, bids, and asks' },
+                { label: 'Low Fees', desc: 'Starting at 0.1% per trade' },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4"
+                >
+                  <h3 className="font-semibold text-[var(--color-text-heading)]">{item.label}</h3>
+                  <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{item.desc}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <img
+            src={pageImages.exchange}
+            alt="Crypto trading charts"
+            className="w-full rounded-xl border border-[var(--color-border)] object-cover shadow-[var(--shadow-card)]"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
@@ -110,6 +118,13 @@ export function ExchangePreview() {
 }
 
 export function EscrowPreview() {
+  const previewCategories = [
+    { title: 'Exotic cars', image: categoryImages.cars },
+    { title: 'Watches', image: categoryImages.watches },
+    { title: 'Real Estate', image: categoryImages.realEstate },
+    { title: 'Domains', image: categoryImages.domains },
+  ]
+
   return (
     <section id="escrow-preview" className="bg-[var(--color-bg-elevated)] px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl text-center">
@@ -119,6 +134,26 @@ export function EscrowPreview() {
         <p className="mx-auto mt-3 max-w-xl text-[var(--color-text-secondary)]">
           Safely buy exotic cars, watches, real estate, and domains with escrow protection.
         </p>
+
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {previewCategories.map((cat) => (
+            <Link
+              key={cat.title}
+              to="/marketplace"
+              className="group overflow-hidden rounded-lg border border-[var(--color-border)]"
+            >
+              <img
+                src={cat.image}
+                alt={cat.title}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              <p className="bg-[var(--color-bg-surface)] py-2 text-sm font-semibold text-[var(--color-text-heading)]">
+                {cat.title}
+              </p>
+            </Link>
+          ))}
+        </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link

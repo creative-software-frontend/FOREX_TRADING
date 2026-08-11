@@ -5,6 +5,12 @@ export const categoryImages = {
   domains: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=640&h=480&fit=crop',
 } as const
 
+export const pageImages = {
+  hero: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1920&h=800&fit=crop',
+  exchange: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&h=600&fit=crop',
+  escrow: 'https://images.unsplash.com/photo-1563013547-824ae1b704d3?w=1200&h=500&fit=crop',
+} as const
+
 export const cryptoLogos = {
   BNB: 'https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png',
   BTC: 'https://assets.coingecko.com/coins/images/1/small/bitcoin.png',
