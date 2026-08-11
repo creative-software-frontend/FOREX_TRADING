@@ -33,7 +33,7 @@ export function MarketTable() {
               >
                 <td className="px-5 py-4">
                   <div className="flex items-center gap-3">
-                    <CryptoIcon symbol={asset.symbol} color={asset.iconColor} size="sm" />
+                    <CryptoIcon symbol={asset.symbol} color={asset.iconColor} logoUrl={asset.logoUrl} size="sm" />
                     <span className="font-medium text-[var(--color-text-heading)]">
                       {asset.name}
                     </span>

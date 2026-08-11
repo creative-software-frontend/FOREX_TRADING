@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { pageImages } from '../data/images'
 import { PageHeader } from '../components/PageHeader'
 import { FloatingChatButton } from '../components/FloatingChatButton'
 
@@ -33,6 +34,15 @@ export function EscrowPage() {
         description="Buy high-value items safely. Our escrow holds funds until both parties are satisfied."
       />
 
+      <div className="relative h-48 overflow-hidden sm:h-56">
+        <img
+          src={pageImages.escrow}
+          alt="Secure escrow protection"
+          className="h-full w-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] to-transparent" />
+      </div>
+
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-xl font-bold text-[var(--color-text-heading)]">How Escrow Works</h2>
@@ -51,19 +61,29 @@ export function EscrowPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-8 text-center">
-            <h2 className="text-xl font-bold text-[var(--color-text-heading)]">
-              Ready to buy with escrow?
-            </h2>
-            <p className="mx-auto mt-2 max-w-md text-sm text-[var(--color-text-secondary)]">
-              Browse luxury listings in our marketplace and purchase with full protection.
-            </p>
-            <Link
-              to="/marketplace"
-              className="mt-6 inline-block rounded-lg bg-[var(--color-primary)] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-hover)]"
-            >
-              Browse Marketplace
-            </Link>
+          <div className="mt-12 overflow-hidden rounded-xl border border-[var(--color-border)]">
+            <div className="grid lg:grid-cols-2">
+              <img
+                src={pageImages.escrow}
+                alt="Escrow marketplace"
+                className="h-full min-h-[220px] w-full object-cover"
+                loading="lazy"
+              />
+              <div className="flex flex-col justify-center bg-[var(--color-bg-elevated)] p-8 text-center lg:text-left">
+                <h2 className="text-xl font-bold text-[var(--color-text-heading)]">
+                  Ready to buy with escrow?
+                </h2>
+                <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
+                  Browse luxury listings in our marketplace and purchase with full protection.
+                </p>
+                <Link
+                  to="/marketplace"
+                  className="mt-6 inline-block rounded-lg bg-[var(--color-primary)] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-primary-hover)] lg:self-start"
+                >
+                  Browse Marketplace
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

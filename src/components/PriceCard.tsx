@@ -27,7 +27,7 @@ export function PriceCard({ asset }: PriceCardProps) {
     <article className="flex flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5 shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5">
       <header className="mb-4 flex items-start justify-between gap-3">
         <div className="flex items-center gap-2.5">
-          <CryptoIcon symbol={asset.symbol} color={asset.iconColor} />
+          <CryptoIcon symbol={asset.symbol} color={asset.iconColor} logoUrl={asset.logoUrl} />
           <div className="text-left">
             <p className="text-sm font-semibold text-[var(--color-text-heading)]">
               {asset.name}

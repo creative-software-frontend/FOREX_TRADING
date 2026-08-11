@@ -58,7 +58,7 @@ export function LearningPage() {
                       type="button"
                       className="text-xs font-semibold text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-hover)]"
                     >
-                      Read more &rarr;
+                      Read more →
                     </button>
                   </div>
                 </div>
@@ -73,4 +73,13 @@ export function LearningPage() {
             </p>
             <Link
               to="/exchange"
-              class
+              className="mt-6 inline-block rounded-lg bg-[var(--color-accent-blue)] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-accent-blue-hover)]"
+            >
+              Start Trading
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
